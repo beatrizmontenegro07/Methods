@@ -36,7 +36,7 @@ def metodoSecante(function, x0, x1, precisao, max):
         #Checando se chegou no resultado
         if abs(x2-x1) < precisao:
             print(table)
-            print(f"Convergiu para {x2} após {n} iterações.")
+            print(f"Convergiu para {x2} após {n+1} iterações.")
             return x2
         else:
             x0 = x1 #Atualizando os valores
@@ -58,7 +58,7 @@ try:
 
     raiz = metodoSecante(func, x0, x1, erro, n)
 
-    print(f"A raiz encontrada é: {raiz}")
+    print(f"A raiz encontrada é: {raiz}\n")
 except ValueError:
     print("Erro! Verifique se os valores digitados na entrada estão corretos")
 finally:

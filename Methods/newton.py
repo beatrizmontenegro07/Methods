@@ -24,7 +24,7 @@ def metodoNewton(function, x0, precisao, max):
         
         if abs(f_x_n) < precisao:
             print(table)
-            print(f"Convergiu para {x_n} após {n} iterações.")
+            print(f"Convergiu para {x_n} após {n+1} iterações.")
             return x_n
         
         if f_prime_x_n == 0:

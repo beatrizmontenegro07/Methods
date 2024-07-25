@@ -8,11 +8,13 @@ from prettytable import PrettyTable
 
 
 try:
-    func = str(input("Function f(x) = "))
+    print("\tCalculo do Metodo da Bissecção\t\n")
+    func = str(input("Função f(x) = "))
     f.is_valid(func)
-    a = float(input("a = "))
-    b = float(input("b ="))
-    e = float(input("precisão = "))
+    print("\nConsiderando o intervalo [a, b]")
+    a = float(input("Digite o valor de a = "))
+    b = float(input("Digite o valor de b = "))
+    e = float(input("Digite o nível de erro = "))
     n = int(input("Número máximo de interações = "))
 
     table = PrettyTable()
@@ -30,7 +32,7 @@ try:
         
         if fx == 0 or (b-a)/2 < e:
             print(table)
-            print(f'\n\nResultado apos {i} interações: {x}')
+            print(f'\n\nResultado apos {i+1} interações: {x}\n')
             exit()
         i = i + 1
         if fa*fx > 0:
@@ -38,7 +40,6 @@ try:
             fa = fx
         else:
             b = x
-        """ print(f"b-a/2 = {(b-a)/2}\n\n") """
 
     print(f"O método falhou após {n} interações")
 except (ValueError):

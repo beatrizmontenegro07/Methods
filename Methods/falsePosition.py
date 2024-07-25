@@ -7,11 +7,13 @@ import Module.functions as f
 from prettytable import PrettyTable
 
 try:
-    func = str(input("Function f(x) = "))
+    print("\tCalculo do Metodo da Falsa Posição\t\n")
+    func = str(input("Função f(x) = "))
     f.is_valid(func)
-    a = float(input("a = "))
-    b = float(input("b ="))
-    e = float(input("precisão = "))
+    print("\nConsiderando o intervalo [a, b]")
+    a = float(input("Digite o valor de a = "))
+    b = float(input("Digite o valor de b = "))
+    e = float(input("Digite o nível de erro = "))
     n = int(input("Número máximo de interações = "))
 
     table = PrettyTable()
@@ -30,7 +32,7 @@ try:
 
         if abs(fx) < e:
             print(table)
-            print(f'\n\nResultado apos {i} interações: {x}')
+            print(f'\n\nResultado apos {i+1} interações: {x}')
             exit()
         i = i + 1
         if fb*fx < 0:
